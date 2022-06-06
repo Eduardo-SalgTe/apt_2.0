@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vehiculos">
+
+    <TextView
+        android:id="@+id/tv_veh1"
+        android:layout_width="205dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/rbt_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_veh1_busc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:onClick="bscNomb"
+        android:text="@string/buscar"
+        app:layout_constraintStart_toEndOf="@+id/et_veh1_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/tv_veh1" />
+
+    <EditText
+        android:id="@+id/et_veh1_nombre"
+        android:layout_width="213dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/chofer_nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_veh1" />
+
+    <ListView
+        android:id="@+id/lv_veh3_1"
+        android:layout_width="328dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_veh1_nombre" />
+
+    <TextView
+        android:id="@+id/tv_veh1_2"
+        android:layout_width="355dp"
+        android:layout_height="258dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/prueba2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_veh3_1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

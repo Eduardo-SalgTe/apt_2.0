@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Transporte</string>
+    <string name="bienvenida">BIENVENIDO JUANCHITO </string>
+    <string name="contrasena">INGRESAR CONTRASENA</string>
+    <string name="botton_1">INICIAR SESION</string>
+    <string name="cabezalLobby">SELECCIONA ALGUN APARTADO</string>
+    <string name="rbt_1">FECHAS DE PAGO</string>
+    <string name="rbt_2">CONTROL DE CHOFERES</string>
+    <string name="rbt_3">CONTROL DE VEHICULOS</string>
+    <string name="rbt_4">VER ESTADISTICAS</string>
+    <string name="SecionClose">CERRAR SESION</string>
+    <string name="chofer_nombre">nombre del chofer</string>
+    <string name="buscar">buscar</string>
+    <string name="chofer">chofer</string>
+    <string name="automovil">automovil</string>
+    <string name="fecha_pago">fecha de pago</string>
+    <string name="ano">ano</string>
+    <string name="mes">mes</string>
+    <string name="comentarios">comentarios</string>
+    <string name="pago1">pago1</string>
+    <string name="pago2">pago2</string>
+    <string name="pago3">pago3</string>
+    <string name="pago4">pago4</string>
+    <string name="pago5">pago5</string>
+    <string name="sub1">consultar</string>
+    <string name="sub2">registrar</string>
+    <string name="sub3">modificar</string>
+    <string name = "sp1">faf</string>
+    <string name="ingrese_cantidad">cantidad</string>
+    <string name="guardar">guardar</string>
+    <string name = "eliminar">eliminar</string>
+    <string name = "modificar">modificar</string>
+
+    <string name = "inp_1">nombre</string>
+    <string name = "inp_2">apellido paterno</string>
+    <string name = "inp_3">apellido materno</string>
+    <string name = "inp_4">numero [VEHICULO]</string>
+    <string name = "inp_5">edad</string>
+    <string name = "inp_6">curp</string>
+    <string name = "inp_7">localidad</string>
+    <string name = "inp_8">direccion</string>
+    <string name = "inp_9">telefono 1</string>
+    <string name = "inp_10">telefono 2</string>
+    <string name = "inp_11">licencia [clave]</string>
+    <string name = "inp_12">licencia [tipo]</string>
+    <string name = "inp_13">placas</string>
+    <string name = "inp_14">marca</string>
+    <string name = "inp_15">modelo</string>
+    <string name = "inp_16">descripcion</string>
+
+    <string name="prueba">nombre:\napellido paterno\napellido materno\nnumero [VEHICULO]\nedad\ncurp\nlocalidad\ndireccion\ntelefono 1\ntelefono2\nlicencia [clave]\nlicencia [tipo]</string>
+    <string name="prueba2">automovil numero:\nplacas:\nmarca:\nmodelo:\ndescripcion:</string>
+</resources>

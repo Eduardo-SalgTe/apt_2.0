@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".choferes">
+
+    <TextView
+        android:id="@+id/tv_cho1_titulo"
+        android:layout_width="254dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/rbt_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_cho1_nombre"
+        android:layout_width="212dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/chofer_nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cho1_titulo" />
+
+    <Button
+        android:id="@+id/bt_cho1_busc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="bscNomb"
+        android:text="@string/buscar"
+        app:layout_constraintStart_toEndOf="@+id/et_cho1_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cho1_titulo" />
+
+    <ListView
+        android:id="@+id/lv_cho1"
+        android:layout_width="338dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho1_nombre" />
+
+    <TextView
+        android:id="@+id/tv_cho1_visualizar"
+        android:layout_width="336dp"
+        android:layout_height="299dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/prueba"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_cho1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

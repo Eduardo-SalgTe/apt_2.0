@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/et_veh3_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vehiculo3">
+
+    <TextView
+        android:id="@+id/tv_veh3_tit"
+        android:layout_width="219dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/rbt_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_veh3_busc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:onClick="bscNomb"
+        android:text="@string/buscar"
+        app:layout_constraintStart_toEndOf="@+id/et_veh3_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/tv_veh3_tit" />
+
+    <EditText
+        android:id="@+id/et_veh3_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/chofer_nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_veh3_tit" />
+
+    <Button
+        android:id="@+id/bt_veh3_modificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:onClick="modificarR"
+        android:text="@string/modificar"
+        app:layout_constraintStart_toEndOf="@+id/bt_veh3_eliminar"
+        app:layout_constraintTop_toBottomOf="@+id/et_veh3_descripc" />
+
+    <Button
+        android:id="@+id/bt_veh3_eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="16dp"
+        android:onClick="eliminarR"
+        android:text="@string/eliminar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_veh3_descripc" />
+
+    <EditText
+        android:id="@+id/et_veh3_numero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/inp_4"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_veh3_1" />
+
+    <EditText
+        android:id="@+id/et_veh3_marca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/inp_14"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_veh3_placas" />
+
+    <EditText
+        android:id="@+id/et_veh3_modelo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/inp_15"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_veh3_marca" />
+
+    <EditText
+        android:id="@+id/et_veh3_descripc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/inp_16"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_veh3_modelo" />
+
+    <EditText
+        android:id="@+id/et_veh3_placas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/inp_13"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_veh3_numero" />
+
+    <ListView
+        android:id="@+id/lv_veh3_1"
+        android:layout_width="331dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_veh3_nombre" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

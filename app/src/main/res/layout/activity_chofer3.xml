@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chofer3">
+
+    <TextView
+        android:id="@+id/tv_cho3_titulo"
+        android:layout_width="205dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/rbt_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_cho3_buscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="8dp"
+        android:onClick="bscNomb"
+        android:text="@string/buscar"
+        app:layout_constraintStart_toEndOf="@+id/et_cho3_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cho3_titulo" />
+
+    <EditText
+        android:id="@+id/et_cho3_nombre"
+        android:layout_width="206dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/chofer_nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cho3_titulo" />
+
+    <Button
+        android:id="@+id/bt_cho3_modificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="36dp"
+        android:onClick="modificarR"
+        android:text="@string/modificar"
+        app:layout_constraintStart_toEndOf="@+id/bt_cho3_eliminar"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_tipolic" />
+
+    <ListView
+        android:id="@+id/lv_cho3_seat"
+        android:layout_width="344dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_nombre" />
+
+    <EditText
+        android:id="@+id/et_cho3_localidad"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_7"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho3_dbnomb"
+        app:layout_constraintTop_toBottomOf="@+id/lv_cho3_seat" />
+
+    <EditText
+        android:id="@+id/et_cho3_apellidop"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/inp_2"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_dbnomb" />
+
+    <EditText
+        android:id="@+id/et_cho3_tipolic"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/inp_12"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho3_curp"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_licencia" />
+
+    <EditText
+        android:id="@+id/et_cho3_apellidom"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/inp_3"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_apellidop" />
+
+    <EditText
+        android:id="@+id/et_cho3_numero"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/inp_4"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_apellidom" />
+
+    <EditText
+        android:id="@+id/et_cho3_edad"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_5"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_numero" />
+
+    <EditText
+        android:id="@+id/et_cho3_curp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/inp_6"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_edad" />
+
+    <EditText
+        android:id="@+id/et_cho3_telefono1"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/inp_9"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho3_apellidom"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_direccion" />
+
+    <EditText
+        android:id="@+id/et_cho3_telefono2"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/inp_10"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho3_numero"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_telefono1" />
+
+    <EditText
+        android:id="@+id/et_cho3_licencia"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_11"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho3_edad"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_telefono2" />
+
+    <EditText
+        android:id="@+id/et_cho3_dbnomb"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_1"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_cho3_seat" />
+
+    <EditText
+        android:id="@+id/et_cho3_direccion"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/inp_8"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho3_apellidop"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_localidad" />
+
+    <Button
+        android:id="@+id/bt_cho3_eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="36dp"
+        android:onClick="eliminarR"
+        android:text="@string/eliminar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho3_curp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.transporte">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Transporte">
+        <activity
+            android:name=".sub_Vehicu"
+            android:exported="false" />
+        <activity
+            android:name=".menu_Chofer"
+            android:exported="false" />
+        <activity
+            android:name=".estadistica2"
+            android:exported="false" />
+        <activity
+            android:name=".vehiculo3"
+            android:exported="false" />
+        <activity
+            android:name=".vehiculo2"
+            android:exported="false" />
+        <activity
+            android:name=".chofer3"
+            android:exported="false" />
+        <activity
+            android:name=".chofer2"
+            android:exported="false" />
+        <activity
+            android:name=".gestion"
+            android:exported="false" />
+        <activity
+            android:name=".vehiculos"
+            android:exported="false" />
+        <activity
+            android:name=".choferes"
+            android:exported="false" />
+        <activity
+            android:name=".fechas"
+            android:exported="false" />
+        <activity
+            android:name=".Lobby"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

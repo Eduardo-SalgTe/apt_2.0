@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chofer2">
+
+    <TextView
+        android:id="@+id/tv_cho2_titulo"
+        android:layout_width="227dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/rbt_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_cho2_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="28dp"
+        android:onClick="Registrar"
+        android:text="@string/guardar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_curp" />
+
+    <EditText
+        android:id="@+id/et_cho2_localidad"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/inp_7"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho2_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cho2_titulo" />
+
+    <EditText
+        android:id="@+id/et_cho2_numero"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_4"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_apellidom" />
+
+    <EditText
+        android:id="@+id/et_cho2_telefono1"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/inp_9"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho2_apellidom"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_direccion" />
+
+    <EditText
+        android:id="@+id/et_cho2_tipolice"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_12"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho2_curp"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_licencia" />
+
+    <EditText
+        android:id="@+id/et_cho2_edad"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_5"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_numero" />
+
+    <EditText
+        android:id="@+id/et_cho2_direccion"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_8"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho2_apellidop"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_localidad" />
+
+    <EditText
+        android:id="@+id/et_cho2_telefono2"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_10"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho2_numero"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_telefono1" />
+
+    <EditText
+        android:id="@+id/et_cho2_apellidom"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/inp_3"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_apellidop" />
+
+    <EditText
+        android:id="@+id/et_cho2_curp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_6"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_edad" />
+
+    <EditText
+        android:id="@+id/et_cho2_apellidop"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_2"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_nombre" />
+
+    <EditText
+        android:id="@+id/et_cho2_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/inp_1"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cho2_titulo" />
+
+    <EditText
+        android:id="@+id/et_cho2_licencia"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inp_11"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/et_cho2_edad"
+        app:layout_constraintTop_toBottomOf="@+id/et_cho2_telefono2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

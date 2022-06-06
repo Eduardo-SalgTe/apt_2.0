@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fechas">
+
+    <TextView
+        android:id="@+id/tv_fec1_titulo"
+        android:layout_width="217dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/rbt_1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_fec1_busc"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:onClick="bscNomb"
+        android:text="@string/buscar"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/et_fec1_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fec1_titulo" />
+
+    <EditText
+        android:id="@+id/et_fec1_nombre"
+        android:layout_width="217dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/chofer_nombre"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fec1_titulo" />
+
+    <ListView
+        android:id="@+id/lv_fec1_nombres"
+        android:layout_width="381dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_fec1_nombre" />
+
+    <TextView
+        android:id="@+id/tv_fec1_fecha"
+        android:layout_width="130dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/fecha_pago"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_fec_1" />
+
+    <RadioGroup
+        android:id="@+id/rg_fec_1"
+        android:layout_width="365dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:addStatesFromChildren="false"
+        android:orientation="horizontal"
+        android:rotationX="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_fec1_nombres">
+
+        <RadioButton
+            android:id="@+id/rb_fec1_pago1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:onClick="pUno"
+            android:text="@string/pago1"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rb_fec1_pago2"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:onClick="pDos"
+            android:text="@string/pago2"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rb_fec1_pago3"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:onClick="pTres"
+            android:text="@string/pago3"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rb_fec1_pago4"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:onClick="pCuatro"
+            android:text="@string/pago4"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rb_fec1_pago5"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:onClick="pCinco"
+            android:text="@string/pago5"
+            android:textSize="14sp" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etn_fec1_cantidad"
+        android:layout_width="80dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/ingrese_cantidad"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/tv_fec1_fecha"
+        app:layout_constraintTop_toBottomOf="@+id/rg_fec_1" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="357dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:hint="comentarios"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fec1_fecha" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="8dp"
+        android:onClick="upPay"
+        android:text="@string/guardar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <TextView
+        android:id="@+id/tv_fec1_automovil"
+        android:layout_width="89dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/automovil"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_fec1_chofer"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/tv_fec1_coment"
+        android:layout_width="147dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/comentarios"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_fec1_automovil"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/tv_fec1_chofer"
+        android:layout_width="83dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/chofer"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Spinner
+        android:id="@+id/sp_fec_mm"
+        android:layout_width="120dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:clickable="false"
+        app:layout_constraintStart_toEndOf="@+id/sp_fec1_yy"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fec1_fecha" />
+
+    <Spinner
+        android:id="@+id/sp_fec1_yy"
+        android:layout_width="110dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fec1_fecha" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
