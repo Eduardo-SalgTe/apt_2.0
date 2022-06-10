@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Transporte">
         <activity
+            android:name=".viewPDFActivity"
+            android:exported="false" />
+        <activity
             android:name=".sub_Vehicu"
             android:exported="false" />
         <activity
