@@ -60,10 +60,21 @@
     <TextView
         android:id="@+id/tmp"
         android:layout_width="298dp"
-        android:layout_height="234dp"
+        android:layout_height="200dp"
         android:layout_marginStart="56dp"
         android:layout_marginTop="32dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lv_est1_2" />
+
+    <Button
+        android:id="@+id/btn_sta_view"
+        android:layout_width="196dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="16dp"
+        android:onClick="toEstad2"
+        android:text="@string/b_viewPDF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tmp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.transporte;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
 import android.util.Log;
 
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 public class TemplatePdf {
     private Context context;
     private File pdfFile;
+    private File folder;
     private Document document;
     private PdfWriter pdfWriter;
     private Paragraph paragraph;
@@ -36,8 +38,8 @@ public class TemplatePdf {
         this.context = context;
     }
 
-    public void openDocument() {
-        createFile();
+    public void openDocument(String name, String ext) {
+        createFile(name, ext);
         try {
             document = new Document(PageSize.A4);
             pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(pdfFile));
@@ -48,24 +50,33 @@ public class TemplatePdf {
         }
     }
 
-    public void createFile() {
-        File folder = new File(Environment.getDataDirectory().toString(), "PDF");
+    public void createFile(String name, String exten)
+    {
+        String dir = name + exten;
+
+        //folder = new File(Environment.getExternalStorageDirectory().toString(), "PAGOS/");
+        folder = Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_DOCUMENTS + "/PAGOS/");
         if (!folder.exists())
+        {
             folder.mkdirs();
-        pdfFile = new File(folder, "prueba.pdf");
+        }
+        pdfFile = new File(folder, dir);
     }
 
     public void closeDocument() {
         document.close();
     }
 
-    public void addMetaData(String title, String subject, String author) {
+    public void addMetaData(String title, String subject, String author)
+    {
         document.addTitle(title);
         document.addSubject(subject);
         document.addAuthor(author);
     }
 
-    public void addTitles(String title, String subTitle, String date) {
+    public void addTitles(String title, String subTitle, String date)
+    {
         try {
             paragraph = new Paragraph();
             addChildP(new Paragraph(title, fTitle));
@@ -79,7 +90,8 @@ public class TemplatePdf {
 
     }
 
-    private void addChildP(Paragraph childParagraph) {
+    private void addChildP(Paragraph childParagraph)
+    {
         childParagraph.setAlignment(Element.ALIGN_CENTER);
         paragraph.add(childParagraph);
     }
@@ -109,7 +121,7 @@ public class TemplatePdf {
             int indexC = 0;
             while(indexC < header.length)
             {
-                pdfPCell = new PdfPCell(new Phrase(header[indexC], fSubTitle));
+                pdfPCell = new PdfPCell(new Phrase(header[indexC++], fSubTitle));
                 pdfPCell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 pdfPCell.setBackgroundColor(BaseColor.LIGHT_GRAY);
                 pdfPTable.addCell(pdfPCell);
@@ -118,7 +130,7 @@ public class TemplatePdf {
             for(int indexR = 0; indexR < clients.size(); indexR++)
             {
                 String [] row = clients.get(indexR);
-                for(indexC = 0; indexC < clients.size(); indexC++)
+                for(indexC = 0; indexC < header.length; indexC++)
                 {
                     pdfPCell = new PdfPCell(new Phrase(row[indexC]));
                     pdfPCell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -134,5 +146,11 @@ public class TemplatePdf {
         }
     }
 
-
+    public void viewPDF()
+    {
+        Intent intent = new Intent(context, estadistica2.class);
+        intent.putExtra("path", pdfFile.getAbsolutePath());
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
 }

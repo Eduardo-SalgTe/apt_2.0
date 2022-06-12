@@ -17,6 +17,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class gestion extends AppCompatActivity {
@@ -27,12 +29,19 @@ public class gestion extends AppCompatActivity {
     private String mat[][];
     private String mat2[][];
     private ListView lv2;
-
     private String curp;
+    private String [] header = {"Pago", "Cantidad", "Detalle"};
+    private String shorText = "Eduardo";
+    private String longText = "Detalles de factura del mes: mayo";
+    private TemplatePdf templatePdf;
+
+    public static String indexE = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gestion);
+
+
 
         et1 = findViewById(R.id.et_est1_nombre);
         tvDetl = findViewById(R.id.tmp);
@@ -58,8 +67,18 @@ public class gestion extends AppCompatActivity {
                 finaL(busqueda);
             }
         });
+
     }
 
+    private ArrayList<String[]>getClients()
+    {
+        ArrayList<String[]> rows = new ArrayList<>();
+        rows.add(new String[]{"1", "2345", "uno"});
+        rows.add(new String[]{"2", "1345", "dos"});
+        rows.add(new String[]{"3", "2325", "tres"});
+        rows.add(new String[]{"4", "7345", "cuatro"});
+        return rows;
+    }
     public void finaL(String bus)
     {
         String cad = "";
@@ -69,7 +88,8 @@ public class gestion extends AppCompatActivity {
         Cursor slct = dbTP.rawQuery("SELECT * FROM pago WHERE id ='" + bus + "'", null);
         if(slct.moveToFirst())
         {
-            cad += "                 id: "+(slct.getString(0) + "\n");
+            indexE = slct.getString(0);
+            cad += "                 id: "+(indexE) + "\n";
             cad += "             chofer: "+(slct.getString(1) + "\n");
             cad += "        comentarios: "+(slct.getString(2) + "\n");
             cad += "                ano: "+(slct.getString(3) + "\n");
@@ -238,9 +258,27 @@ public class gestion extends AppCompatActivity {
         lv2.setAdapter(adapter);
     }
 
-    public void toPagos(View view)
+    public void toEstad2(View view)
     {
-        Intent aPagos = new Intent (this, estadistica2.class);
-        startActivity(aPagos);
+        if((indexE!="") && (indexE.length()>5))
+        {
+            templatePdf = new TemplatePdf(getApplicationContext());
+            templatePdf.openDocument(indexE, ".pdf");
+            templatePdf.addMetaData("Titulo de prueba", "subtitle", "Eduardo Salgado");
+            templatePdf.addTitles("REPORTE DE PAGOS", "EMPLEADO: JOSE CHUY", "May, 14. 2022");
+            templatePdf.addParagraph(shorText);
+            templatePdf.addParagraph(longText);
+            templatePdf.createTable(header, getClients());
+            templatePdf.closeDocument();
+
+            //Toast.makeText(this, "Dha", Toast.LENGTH_SHORT).show();
+            templatePdf.viewPDF();
+            //Intent aEstad2 = new Intent (this, estadistica2.class);
+            //startActivity(aEstad2);
+        }
+        else
+            Toast.makeText(this, "Debes seleccionar una fecha", Toast.LENGTH_SHORT).show();
     }
+
+
 }

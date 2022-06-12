@@ -23,9 +23,9 @@ public class Lobby extends AppCompatActivity {
         r4 = findViewById(R.id.lobby_rbt4);
 
         if (num == 0){
-            r2.setEnabled(false);
-            r3.setEnabled(false);
-            r4.setEnabled(false);
+            r2.setEnabled(true);//false
+            r3.setEnabled(true);//false
+            r4.setEnabled(true);//false
         } if(num == 1){
             r1.setEnabled(true);
             r2.setEnabled(true);

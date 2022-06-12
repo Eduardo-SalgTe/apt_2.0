@@ -50,4 +50,5 @@
 
     <string name="prueba">nombre:\napellido paterno\napellido materno\nnumero [VEHICULO]\nedad\ncurp\nlocalidad\ndireccion\ntelefono 1\ntelefono2\nlicencia [clave]\nlicencia [tipo]</string>
     <string name="prueba2">automovil numero:\nplacas:\nmarca:\nmodelo:\ndescripcion:</string>
+    <string name = "b_viewPDF">Generar reporte</string>
 </resources>
