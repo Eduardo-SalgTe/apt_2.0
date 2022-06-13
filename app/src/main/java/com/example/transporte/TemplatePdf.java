@@ -81,7 +81,7 @@ public class TemplatePdf {
             paragraph = new Paragraph();
             addChildP(new Paragraph(title, fTitle));
             addChildP(new Paragraph(subTitle, fSubTitle));
-            addChildP(new Paragraph("Creado:" + date, fHighText));
+            addChildP(new Paragraph("Creado: " + date, fHighText));
             paragraph.setSpacingAfter(30);
             document.add(paragraph);
         } catch (Exception e) {

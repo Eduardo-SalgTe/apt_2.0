@@ -1,5 +1,6 @@
 package com.example.transporte;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -24,16 +25,18 @@ import java.util.Calendar;
 public class gestion extends AppCompatActivity {
     private EditText et1;
     private TextView tvDetl;
-
+    private String[] data;
     private ListView lv1;
     private String mat[][];
     private String mat2[][];
     private ListView lv2;
     private String curp;
-    private String [] header = {"Pago", "Cantidad", "Detalle"};
+    String [] header = {"Pago", "Cantidad", "Detalle"};
     private String shorText = "Eduardo";
     private String longText = "Detalles de factura del mes: mayo";
     private TemplatePdf templatePdf;
+    private String [] monthAS = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+    private String dateComp;
 
     public static String indexE = "";
     @Override
@@ -70,15 +73,6 @@ public class gestion extends AppCompatActivity {
 
     }
 
-    private ArrayList<String[]>getClients()
-    {
-        ArrayList<String[]> rows = new ArrayList<>();
-        rows.add(new String[]{"1", "2345", "uno"});
-        rows.add(new String[]{"2", "1345", "dos"});
-        rows.add(new String[]{"3", "2325", "tres"});
-        rows.add(new String[]{"4", "7345", "cuatro"});
-        return rows;
-    }
     public void finaL(String bus)
     {
         String cad = "";
@@ -86,19 +80,23 @@ public class gestion extends AppCompatActivity {
         SQLiteOH admin = new SQLiteOH(this, "administracion", null, 1);
         SQLiteDatabase dbTP = admin.getWritableDatabase();
         Cursor slct = dbTP.rawQuery("SELECT * FROM pago WHERE id ='" + bus + "'", null);
-        if(slct.moveToFirst())
-        {
-            indexE = slct.getString(0);
-            cad += "                 id: "+(indexE) + "\n";
-            cad += "             chofer: "+(slct.getString(1) + "\n");
-            cad += "        comentarios: "+(slct.getString(2) + "\n");
-            cad += "                ano: "+(slct.getString(3) + "\n");
-            cad += "                        mes: "+(slct.getString(4) + "\n");
-            cad += "                        pago1: "+(slct.getString(5) + "\n");
-            cad += "               pago2: "+(slct.getString(6) + "\n");
-            cad += "                paago3: "+(slct.getString(7) + "\n");
-            cad += "              pago4: "+(slct.getString(8) + "\n");
-            cad += "              pago5: "+(slct.getString(9));
+        data = new String[10];
+        if(slct.moveToFirst()) {
+            for (int f = 0; f < 10; f++)
+            {
+                data[f] = slct.getString(f);
+            }
+            indexE = data[0];
+            cad += "id: "+(indexE) + "\n";
+            cad += "chofer: "+(data[1] + "\n");
+            cad += "comentarios: "+(data[2] + "\n");
+            cad += "ano: "+(data[3] + "\n");
+            cad += "mes: "+(data[4] + "\n");
+            cad += "pago1: "+(data[5] + "\n");
+            cad += "pago2: "+(data[6] + "\n");
+            cad += "paago3: "+(data[7] + "\n");
+            cad += "pago4: "+(data[8] + "\n");
+            cad += "pago5: "+(data[9]);
         }
         tvDetl.setText(cad);
         slct.close();
@@ -258,14 +256,42 @@ public class gestion extends AppCompatActivity {
         lv2.setAdapter(adapter);
     }
 
+    public void getDat() {
+        Calendar fecha = Calendar.getInstance();
+        int month = 0, day = 0, year = 0;
+        String monthS = "";
+        month = fecha.get(Calendar.MONTH);
+        day = fecha.get(Calendar.DAY_OF_MONTH);
+        year = fecha.get(Calendar.YEAR);
+        Toast.makeText(this, month + ", " + day + ", " + year, Toast.LENGTH_SHORT).show();
+        for (int m = 0; m < monthAS.length; m++)
+        {
+            monthS = monthAS[month];
+        }
+        dateComp = monthS + ", " + day + ". " + year;
+    }
+
+    @NonNull
+    private ArrayList<String[]>getClients()
+    {
+        ArrayList<String[]> rows = new ArrayList<>();
+        rows.add(new String[]{"1", data[5], "uno"});
+        rows.add(new String[]{"2", data[6], "dos"});
+        rows.add(new String[]{"3", data[7], "tres"});
+        rows.add(new String[]{"4", data[8], "cuatro"});
+        return rows;
+    }
+
     public void toEstad2(View view)
     {
         if((indexE!="") && (indexE.length()>5))
         {
+            getDat();
+
             templatePdf = new TemplatePdf(getApplicationContext());
             templatePdf.openDocument(indexE, ".pdf");
-            templatePdf.addMetaData("Titulo de prueba", "subtitle", "Eduardo Salgado");
-            templatePdf.addTitles("REPORTE DE PAGOS", "EMPLEADO: JOSE CHUY", "May, 14. 2022");
+            templatePdf.addMetaData("Pago de empleados", "historial", "Eduardo Salgado");
+            templatePdf.addTitles("REPORTE DE PAGOS", "EMPLEADO: "+data[1], dateComp);
             templatePdf.addParagraph(shorText);
             templatePdf.addParagraph(longText);
             templatePdf.createTable(header, getClients());
@@ -279,6 +305,5 @@ public class gestion extends AppCompatActivity {
         else
             Toast.makeText(this, "Debes seleccionar una fecha", Toast.LENGTH_SHORT).show();
     }
-
 
 }
